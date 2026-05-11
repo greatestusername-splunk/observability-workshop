@@ -402,6 +402,12 @@ docker build --platform linux/amd64 -t localhost:9999/agentic-ai-app:app-with-ag
 docker push localhost:9999/agentic-ai-app:app-with-agents-and-tools
 ```
 
+> Tip: if the image is taking too long to build, consider using the pre-built
+> image instead. To do so, update the image name in
+> the `~/workshop/agentic-ai/base-app/k8s.yaml` file to `ghcr.io/splunk/agentic-ai-app:app-with-agents-and-tools`
+> instead of `localhost:9999/agentic-ai-app:app-with-agents-and-tools`.
+
+
 ### Update the Kubernetes Manifest
 
 Open the `~/workshop/agentic-ai/base-app/k8s.yaml` file for editing and
@@ -477,5 +483,8 @@ Select one of the newer traces. We see all of our agents represented in the Agen
 ![Trace](../images/Trace-v2.png)
 
 We can also see the tool calls: 
+
+>Note: switch from the `AI details` to `Span details` on the right-hand side of the screen
+> to see the tool call details. 
 
 ![Trace](../images/TraceWithToolCalls.png)

@@ -35,6 +35,8 @@ to add the following import statement between the lines that say
 from poison_chat_wrapper import PoisonedChatWrapper
 ```
 
+> Note: This new import statement is in addition to the other ones we added earlier. 
+
 Then, replace the definition of the `hotel_specialist_node` function with the following: 
 
 > Tip: to delete a large number of lines in bulk using the `vi` editor, press `Shift` + `v` to ensure `Visual 
@@ -105,6 +107,11 @@ cd ~/workshop/agentic-ai/base-app
 docker build --platform linux/amd64 -t localhost:9999/agentic-ai-app:app-with-quality-issue .
 docker push localhost:9999/agentic-ai-app:app-with-quality-issue
 ```
+
+> Tip: if the image is taking too long to build, consider using the pre-built
+> image instead. To do so, update the image name in
+> the `~/workshop/agentic-ai/base-app/k8s.yaml` file to `ghcr.io/splunk/agentic-ai-app:app-with-quality-issue`
+> instead of `localhost:9999/agentic-ai-app:app-with-quality-issue`.
 
 ### Update the Kubernetes Manifest
 
